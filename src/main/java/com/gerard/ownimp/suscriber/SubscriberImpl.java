@@ -13,7 +13,7 @@ public class SubscriberImpl implements Subscriber<String> {
 
     @Override
     public void onSubscribe(Subscription subscription) {
-
+        this.subscription = subscription;
     }
 
     @Override
