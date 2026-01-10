@@ -1,4 +1,4 @@
-package com.gerard.ownimp.publisher;
+package com.gerard.reactive_stream.publisher;
 
 import com.github.javafaker.Faker;
 import org.reactivestreams.Subscriber;
@@ -25,6 +25,14 @@ public class SubscriptionImpl implements Subscription {
         if(isCancelled) return;
 
         log.info("Subscriber has requested {} items", requested);
+
+        if(requested > MAX_ITEMS){
+            log.error("Subscriber has requested more than MAX_ITEMS");
+            this.subscriber.onError(new RuntimeException("Requested more than expected."));
+            this.isCancelled = true;
+
+            return;
+        }
 
         for(int i = 0; i < requested && count < MAX_ITEMS ; i++){
             count++;

@@ -1,4 +1,4 @@
-package com.gerard.ownimp.suscriber;
+package com.gerard.reactive_stream.suscriber;
 
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;

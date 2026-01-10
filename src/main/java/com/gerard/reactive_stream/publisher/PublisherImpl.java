@@ -1,4 +1,4 @@
-package com.gerard.ownimp.publisher;
+package com.gerard.reactive_stream.publisher;
 
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
